@@ -6,7 +6,6 @@ background_colour = (1,1,1)
 (width, height) = (800, 600)
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Space Invaders')
-screen.fill(background_colour)
 pygame.display.flip()
 
 #player image addition
@@ -21,9 +20,11 @@ def playerImg(x,y):
 
 icon=pygame.image.load('space-invaders.png')
 pygame.display.set_icon(icon)
+
 running = True
 while running:
-  playerX += 0.1
+  screen.fill(background_colour)
+  playerX += 0.2
   pygame.display.update()
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
